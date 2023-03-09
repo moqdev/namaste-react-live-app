@@ -1,0 +1,32 @@
+{
+  "name": "namaste-react-live-app",
+  "version": "1.0.0",
+  "description": "This is a live React course.",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moqdev/namaste-react-live-app.git"
+  },
+  "author": "Mona W.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moqdev/namaste-react-live-app/issues"
+  },
+  "homepage": "https://github.com/moqdev/namaste-react-live-app#readme",
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    ">0.3%, defaults, supports es6-module, maintained node versions"
+  ]
+}
