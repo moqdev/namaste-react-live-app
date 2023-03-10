@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM, { createRoot } from "react-dom/client";
 
+// CAN YOU JUST USE REACT IN YOUR FOOTER ONLY? YES! --> By your "root".
+// Change the root to "footer" and it will only render in the footer.
+// AND In index.html change the id="root" to id="footer"
+
 // React Element Example A: (varible --> title must be lowercase)
 const title = (
   <h1 id="title" key="h2">
