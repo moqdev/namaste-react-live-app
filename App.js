@@ -39,57 +39,17 @@ const Title = () => (
 
 const HeaderComponent = () => {
   return (
-    <section className="showcase">
-      <div className="header">
-        <Title />
-        <div className="toggle"></div>
-      </div>
-      <div className="overlay"></div>
-      <div className="text">
-        <h2>Cure Your Hunger </h2>
-        <h3>
-          All Your Favorite Restaurants and more, delivered right at your door
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod.{" "}
-        </p>
-        <a href="#">Enter Delivery Address</a>
-      </div>
+    <div>
+      <Title />
       <div className="nav-items">
         <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About US</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Cart</a>
-          </li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
         </ul>
       </div>
-      <ul className="social">
-        <li>
-          <a href="#">
-            <img src="https://i.ibb.co/x7P24fL/facebook.png"></img>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></img>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="https://i.ibb.co/ySwtH4B/instagram.png"></img>
-          </a>
-        </li>
-      </ul>
-    </section>
+    </div>
   );
 };
 
