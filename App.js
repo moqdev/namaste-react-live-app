@@ -22,26 +22,21 @@ import ReactDOM, { createRoot } from "react-dom/client";
   */
 
 const Body = () => {
-  return (
-    <h4>Body</h4>
-  );
+  return <h4>Body</h4>;
 };
 
 const Footer = () => {
-  return (
-    <h4>Footer</h4>
-  );
+  return <h4>Footer</h4>;
 };
 
+// const AppLayout = () => {
+//   return (
+//     <Header/>
+//     <Body/>
+//     <Footer/>
 
-const AppLayout = () => {
-  return (
-    <Header/>
-    <Body/>
-    <Footer/>
-
-  );
-};
+//   );
+// };
 
 const Title = () => (
   <a href="/">
@@ -69,36 +64,23 @@ const HeaderComponent = () => {
   );
 };
 
-// Important to know about JSX: 
-// JSX can only have one parent element.
-// If you want to have multiple elements, you can wrap them in a div or use React.Fragment
-// Better to use React.Fragment because it doesn't add extra divs to the DOM.
-// React.Fragment is coming from React library (import React from "react";).
-// React.Fragment is like an EMPTY TAG. 
-// React.Fragment is a component, it doesn't render anything. It's used to wrap multiple components. 
-// It's used to avoid adding extra divs to the DOM!
-const App = () => {
-  return (
-    <React.Fragment>
-      <HeaderComponent />
-      <Body />
-      <Footer />
-    </React.Fragment>
-  );
+//INLINE STYLING IN REACT.
+// how to input css to React.Fragment empty tags?
+// by using style attribute and passing an object div style={{}}
+const styleObj = {
+  color: "red",
+  backgroundColor: "blue",
+  fontSize: "20px",
 };
 
-// But we can also use <> </> instead of React.Fragment - looks cleaner.
 const App = () => {
   return (
-    <>
+    <div style={styleObj}>
       <HeaderComponent />
-      <Body />
-      <Footer />
-    </>
+    </div>
   );
 };
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderComponent />);
+root.render(<App />);
