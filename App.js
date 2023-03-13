@@ -4,7 +4,7 @@ import ReactDOM, { createRoot } from "react-dom/client";
 // APP LAYOUT
 /**
     Header
-      - Title/Logo
+      - Title(Logo)
       - Nav Items (Right Side)
       - Cart
     Body 
@@ -21,23 +21,6 @@ import ReactDOM, { createRoot } from "react-dom/client";
      - copyrights
   */
 
-const Body = () => {
-  return <h4>Body</h4>;
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
-};
-
-// const AppLayout = () => {
-//   return (
-//     <Header/>
-//     <Body/>
-//     <Footer/>
-
-//   );
-// };
-
 const Title = () => (
   <a href="/">
     <img
@@ -48,7 +31,7 @@ const Title = () => (
   </a>
 );
 
-const HeaderComponent = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -64,26 +47,61 @@ const HeaderComponent = () => {
   );
 };
 
-//INLINE STYLING IN REACT.
-// how to input css to React.Fragment empty tags?
-// by using style attribute and passing an object div style={{}}
-const styleObj = {
-  color: "red",
-  backgroundColor: "blue",
-  fontSize: "20px",
+//Make RestaurantCard dynamic
+const burgerKing = {
+  name: "Burger King",
+  image:
+    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
+  cusines: ["Burgers", "American"],
+  rating: 4.2,
+  price: 200,
 };
 
-const App = () => (
-  <div
-    style={{
-      color: "violet",
-      backgroundColor: "greenyellow",
-      fontSize: "20px",
-    }}>
-    <HeaderComponent />
-  </div>
-);
+const RestaurantCard = () => {
+  return (
+    <div className="card">
+      <img src={burgerKing.image}></img>
+      <h2>{burgerKing.name}</h2>
+      <h3>{burgerKing.cusines.join(", ")}</h3>
+      <h4>{burgerKing.rating}</h4>
+    </div>
+  );
+};
+
+// //Build RestuarantCard using hard data now and integrating API later
+// const RestaurantCard = () => {
+//   return (
+//     <div className="card">
+//       <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup"></img>
+//       <h2>Burger King</h2>
+//       <h3>Burgers, American</h3>
+//       <h4>4.2 </h4>
+//     </div>
+//   );
+// };
+
+const Body = () => {
+  return (
+    <div>
+      <RestaurantCard />
+    </div>
+  );
+};
+
+const Footer = () => {
+  return <h4>Footer</h4>;
+};
+
+const AppLayout = () => {
+  return (
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<App />);
+root.render(<AppLayout />);
