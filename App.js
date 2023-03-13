@@ -73,13 +73,16 @@ const styleObj = {
   fontSize: "20px",
 };
 
-const App = () => {
-  return (
-    <div style={styleObj}>
-      <HeaderComponent />
-    </div>
-  );
-};
+const App = () => (
+  <div
+    style={{
+      color: "violet",
+      backgroundColor: "greenyellow",
+      fontSize: "20px",
+    }}>
+    <HeaderComponent />
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
