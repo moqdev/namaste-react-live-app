@@ -69,23 +69,68 @@ const RestaurantCard = () => {
   );
 };
 
-// //Build RestuarantCard using hard data now and integrating API later
-// const RestaurantCard = () => {
-//   return (
-//     <div className="card">
-//       <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup"></img>
-//       <h2>Burger King</h2>
-//       <h3>Burgers, American</h3>
-//       <h4>4.2 </h4>
-//     </div>
-//   );
-// };
-
 // WHAT IS CONFIG DRIVEN UI?
-// Config Driven UI is a good practice. It allows us to change the number of cards easily, without changing the code, just the config.
-// Config Driven UI allows us to control our frontend by our backend.
-// Backend can send the config to the frontend and the frontend can render the UI.
 // The backend and API is driving the config and the frontend is rendering the UI based on the config.
+
+// IMPLEMENTING CONFIG DRIVEN UI?
+//(Example)
+// 1. Create a config file
+// 2. Create a component that takes in the config as a prop
+// 3. Render the component with the config
+
+//Suppose the const config is coming from our backend and using swiggy as an example, we have our config as follows:
+// Your api is as follows: you have your carousal, you have your restaurant lists, and you have your offers.
+
+const config = [
+  {
+    type: "CAROUSAL",
+    cards: [
+      {
+        offerName: "Get 50% off on your first order",
+      },
+      {
+        offerName: "No Delivery Charges",
+      },
+    ],
+  },
+  {
+    type: "RESTAURANT_LIST",
+    cards: [
+      {
+        name: "Burger King",
+        image:
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
+        cusines: ["Burgers", "American"],
+        rating: 4.2,
+        price: 200,
+      },
+      {
+        name: "KFC",
+        image:
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
+        cusines: ["Burgers", "American"],
+        rating: 4.2,
+        price: 200,
+      },
+      {
+        name: "Taco Bell",
+        image:
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
+        cusines: ["Burgers", "American"],
+        rating: 4.2,
+        price: 200,
+      },
+      {
+        name: "McDonalds",
+        image:
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
+        cusines: ["Burgers", "American"],
+        rating: 4.2,
+        price: 200,
+      },
+    ],
+  },
+];
 
 const Body = () => {
   return (
