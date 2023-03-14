@@ -813,11 +813,19 @@ const restaurantList = [
   },
 ];
 
+//—> changed BurgerKing to restaurantList and added .data?.name and integer [0] to h2.
+//[0] is the first item. If you want the second item, you would use [1] and so on.
+//You can also use .map() to loop through the array and display all the items!
+
+// if the name of the restuarant does not exist, best practice is to use OPTIONAL CHAINING to avoid errors by inputting a question mark (?) after the name.
+//OPTIONAL CHAINING is a new feature in JavaScript that allows you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid.
+//The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined.
+
 const RestaurantCard = () => {
   return (
     <div className="card">
       <img src={restaurantList.image} />
-      <h2> {burgerKing.name} </h2>
+      <h2> {restaurantList.data.name[0]} </h2>
       <h3> {burgerKing.cusines.join(", ")} </h3>
       <h4> {burgerKing.rating} stars </h4>
     </div>
