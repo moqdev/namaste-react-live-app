@@ -64,6 +64,7 @@ const RestaurantCard = () => {
       <h2>{burgerKing.name}</h2>
       <h3>{burgerKing.cusines.join(", ")}</h3>
       <h4>{burgerKing.rating}</h4>
+      <button>Add to Cart</button>
     </div>
   );
 };
@@ -80,9 +81,29 @@ const RestaurantCard = () => {
 //   );
 // };
 
+// WHAT IS CONFIG DRIVEN UI?
+// Config Driven UI is a good practice. It allows us to change the number of cards easily, without changing the code, just the config.
+// Config Driven UI allows us to control our frontend by our backend.
+// Backend can send the config to the frontend and the frontend can render the UI.
+// The backend and API is driving the config and the frontend is rendering the UI based on the config.
+
 const Body = () => {
   return (
-    <div>
+    <div class="restaurant-list">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
       <RestaurantCard />
     </div>
   );
