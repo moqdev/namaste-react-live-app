@@ -47,28 +47,6 @@ const Header = () => {
   );
 };
 
-//Make RestaurantCard dynamic
-const burgerKing = {
-  name: "Burger King",
-  image:
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
-  cusines: ["Burgers", "American"],
-  rating: 4.2,
-  price: 200,
-};
-
-const RestaurantCard = () => {
-  return (
-    <div className="card">
-      <img src={burgerKing.image}></img>
-      <h2>{burgerKing.name}</h2>
-      <h3>{burgerKing.cusines.join(", ")}</h3>
-      <h4>{burgerKing.rating} stars</h4>
-      <button>Add to Cart</button>
-    </div>
-  );
-};
-
 // WHAT IS CONFIG DRIVEN UI?
 // The backend and API is driving the config and the frontend is rendering the UI based on the config.
 
@@ -824,10 +802,15 @@ const restaurantList = [
 const RestaurantCard = () => {
   return (
     <div className="card">
-      <img src={restaurantList.image} />
-      <h2> {restaurantList.data.name[0]} </h2>
-      <h3> {burgerKing.cusines.join(", ")} </h3>
-      <h4> {burgerKing.rating} stars </h4>
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          restaurantList[1].data?.cloudinaryImageId
+        }
+      />
+      <h2> {restaurantList[0].data?.name} </h2>
+      <h3> {restaurantList[0].data?.cuisines?.join(", ")} </h3>
+      <h4> {restaurantList[0].data?.lastMileTravelString} minutes </h4>
     </div>
   );
 };
@@ -885,7 +868,7 @@ const RestaurantCard = () => {
 
 const Body = () => {
   return (
-    <div class="restaurant-list">
+    <div className="restaurant-list">
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
