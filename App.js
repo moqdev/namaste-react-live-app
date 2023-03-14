@@ -805,7 +805,7 @@ const RestaurantCard = () => {
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurantList[1].data?.cloudinaryImageId
+          restaurantList[2].data?.cloudinaryImageId
         }
       />
       <h2> {restaurantList[0].data?.name} </h2>
@@ -869,9 +869,9 @@ const RestaurantCard = () => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      <RestaurantCard  kfc />
+      <RestaurantCard burger king />
+      <RestaurantCard pizza hut />
       <RestaurantCard />
       <RestaurantCard />
       <RestaurantCard />
