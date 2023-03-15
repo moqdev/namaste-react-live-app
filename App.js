@@ -47,17 +47,6 @@ const Header = () => {
   );
 };
 
-// WHAT IS CONFIG DRIVEN UI?
-// The backend and API is driving the config and the frontend is rendering the UI based on the config.
-
-// IMPLEMENTING CONFIG DRIVEN UI?
-//(Example)
-// 1. Create a config file
-// 2. Create a component that takes in the config as a prop
-// 3. Render the component with the config
-
-//Suppose the const config is coming from our backend and using swiggy as an example, we have our config as follows:
-// Your api is as follows: you have your carousal, you have your restaurant lists, and you have your offers.
 
 const restaurantList = [
   {
@@ -791,13 +780,6 @@ const restaurantList = [
   },
 ];
 
-//—> changed BurgerKing to restaurantList and added .data?.name and integer [0] to h2.
-//[0] is the first item. If you want the second item, you would use [1] and so on.
-//You can also use .map() to loop through the array and display all the items!
-
-// if the name of the restuarant does not exist, best practice is to use OPTIONAL CHAINING to avoid errors by inputting a question mark (?) after the name.
-//OPTIONAL CHAINING is a new feature in JavaScript that allows you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid.
-//The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined.
 
 const RestaurantCard = (props) => {
   console.log(props);
@@ -815,16 +797,6 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
-
-//
-
-// Whatever you pass in here: restaurant= {restaurantList[0]} :as an attribute is known as Props inside React.
-// Props is you are passing some properties or some data into your component - Functional Component, Class Component, any component.
-
-// Props are used to pass data from one component to another,
-// and they are immutable, which means that data coming from the parent should not be changed by child components.
-// Props are passed to components via HTML attributes.
-// And are always passed to the component in the same format, which is key = value.
 
 // PROPS REVIEW SUMMARY AND EXAMPLE:
 // For example IN THE BELOW CODE:
