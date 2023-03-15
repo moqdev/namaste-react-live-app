@@ -799,7 +799,8 @@ const restaurantList = [
 //OPTIONAL CHAINING is a new feature in JavaScript that allows you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid.
 //The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined.
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  console.log(props);
   return (
     <div className="card">
       <img
@@ -866,24 +867,23 @@ const RestaurantCard = () => {
 //   },
 // ];
 
+// Whatever you pass in here: restaurant= {restaurantList[0]} :as an attribute is known as Props inside React.
+// Props is you are passing some properties or some data into your component - Functional Component or Class Component.
+
+// Props are used to pass data from one component to another,
+// and they are immutable, which means that data coming from the parent should not be changed by child components.
+// Props are passed to components via HTML attributes.
+// And are always passed to the component in the same format, which is key = value.
+
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard  kfc />
-      <RestaurantCard burger king />
-      <RestaurantCard pizza hut />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      <RestaurantCard restaurant={restaurantList[0]} hello="world" />
+      <RestaurantCard restaurant={restaurantList[1]} />
+      <RestaurantCard restaurant={restaurantList[2]} />
+      <RestaurantCard restaurant={restaurantList[3]} />
+      <RestaurantCard restaurant={restaurantList[4]} />
+      <RestaurantCard restaurant={restaurantList[5]} />
     </div>
   );
 };
