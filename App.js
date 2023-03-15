@@ -806,74 +806,37 @@ const RestaurantCard = (props) => {
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurantList[2].data?.cloudinaryImageId
+          props.restaurant.data?.cloudinaryImageId
         }
       />
-      <h2> {restaurantList[0].data?.name} </h2>
-      <h3> {restaurantList[0].data?.cuisines?.join(", ")} </h3>
-      <h4> {restaurantList[0].data?.lastMileTravelString} minutes </h4>
+      <h2> {props.restaurant.data?.name} </h2>
+      <h3> {props.restaurant.data?.cuisines?.join(", ")} </h3>
+      <h4> {props.restaurant.data?.lastMileTravelString} minutes </h4>
     </div>
   );
 };
 
-// const config = [
-//   {
-//     type: "CAROUSAL",
-//     cards: [
-//       {
-//         offerName: "Get 50% off on your first order",
-//       },
-//       {
-//         offerName: "No Delivery Charges",
-//       },
-//     ],
-//   },
-//   {
-//     type: "RESTAURANT_LIST",
-//     cards: [
-//       {
-//         name: "Burger King",
-//         image:
-//           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
-//         cusines: ["Burgers", "American"],
-//         rating: 4.2,
-//         price: 200,
-//       },
-//       {
-//         name: "Subway",
-//         image:
-//           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/0bf19a82b109b40c2f5c56d00f071a33",
-//         cusines: ["Burgers", "American"],
-//         rating: 4.2,
-//         price: 200,
-//       },
-//       {
-//         name: "Taco Bell",
-//         image:
-//           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/fkddokqc2zyrzphr7aup",
-//         cusines: ["Burgers", "American"],
-//         rating: 4.2,
-//         price: 200,
-//       },
-//       {
-//         name: "McDonalds",
-//         image:
-//           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/1293a58ab5610f4c730c3d8cb6ac1b65",
-//         cusines: ["Burgers", "American"],
-//         rating: 4.2,
-//         price: 200,
-//       },
-//     ],
-//   },
-// ];
+//
 
 // Whatever you pass in here: restaurant= {restaurantList[0]} :as an attribute is known as Props inside React.
-// Props is you are passing some properties or some data into your component - Functional Component or Class Component.
+// Props is you are passing some properties or some data into your component - Functional Component, Class Component, any component.
 
 // Props are used to pass data from one component to another,
 // and they are immutable, which means that data coming from the parent should not be changed by child components.
 // Props are passed to components via HTML attributes.
 // And are always passed to the component in the same format, which is key = value.
+
+// PROPS REVIEW SUMMARY AND EXAMPLE:
+// For example IN THE BELOW CODE:
+// <RestaurantCard restaurant={restaurantList[0]} />
+
+// <RestaurantCard /> is like the function call.
+// {restaurantList[0]}  is where we pass in the arguments.
+//  restaurant={restaurantList[0]}  - this whole thing is called PROPS,
+//whenever we pass in some props to a Functional Component it is ...
+// ... received as a parameter RestaurantCard = ( PROPS ) => {   which is known as PROPS.
+// Now you can use this RestaurantCard = (PROPS) => {  just like any other variable.
+//Remember props is an object like restaurant (in our swiggy data when you looked in Fetch under Network in Developer Tools).
 
 const Body = () => {
   return (
