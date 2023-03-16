@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Title from "./components/Title";
+// Deafult Import
+import Header from "./components/Header";
+// Named Import
+import { Title } from "./components/Header";
 
 // APP LAYOUT
 /**
@@ -21,22 +24,6 @@ import Title from "./components/Title";
      - links
      - copyrights
   */
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const restaurantList = [
   {
