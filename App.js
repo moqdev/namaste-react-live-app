@@ -786,19 +786,20 @@ const restaurantList = [
 //<h3> {props.restaurant.data?.cuisines?.join(", ")} </h3> to destructured <h3> {restaurant.data?.cuisines?.join(", ")} </h3>
 
 const RestaurantCard = ({ restaurant }) => {
-  const { data } = restaurant;
+  const { name, cuisines, cloudinaryImageId, lastMileTravelString, area } =
+    restaurant.data;
   return (
     <div className="card">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          data?.cloudinaryImageId
+          cloudinaryImageId
         }
       />
-      <h2> {data?.name} </h2>
-      <h3> {data?.cuisines?.join(", ")} </h3>
-      <h4> {data?.lastMileTravelString} minutes </h4>
-      <h4> {data?.area} </h4>
+      <h2> {name} </h2>
+      <h3> {cuisines.join(", ")} </h3>
+      <h4> {lastMileTravelString} minutes </h4>
+      <h4> {area} </h4>
     </div>
   );
 };
