@@ -802,11 +802,18 @@ const RestaurantCard = ({
   );
 };
 
-//props are passed as an object
-//use the spread operater to pass the props object to the component.
-//This will pass all the properties of the object as props to the component.
-//Instead of having to write restaurantList[0].data, restaurantList[1].data and [2], [3] etc.
-//Use .map to iterate over the array and pass the props object to the component
+// React Fibre is new reconciliation algorithm introduced in REact 16. Has better performance and rendering.
+// React Fiber architecture is based on a new data structure called the "fiber" that represents a single element of a React component tree.
+// The fiber data structure provides a more fine-grained control over the component's rendering process, enabling React to prioritize and schedule updates more efficiently.
+// The architecture also allows for incremental rendering, so React can break down large updates into smaller chunks and prioritize the most important updates first. Givs better performance and rendering.
+// Also has a new concept of hooks. Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+// other new features new features  -  error boundaries and server-side rendering out-of-the-box
+
+// DO NOT USE INDEX AS KEY. USE SOMETHING UNIQUE LIKE ID.
+// The reason is that the index of a component in a list can change if the list is reordered or items are added or removed from the list.
+// This can cause React to get confused and potentially render components incorrectly.
+
+// 😎  no key < in dex key < unique key  😎 best practice
 
 //1. map over the array
 //2. Give a callabck function, this callback fn takes each object from restaurantList - restuarant.
@@ -817,7 +824,7 @@ const Body = () => {
   return (
     <div className="restaurant-list">
       {restaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} />;
+        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
       })}
     </div>
   );
