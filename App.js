@@ -47,7 +47,6 @@ const Header = () => {
   );
 };
 
-
 const restaurantList = [
   {
     type: "restaurant",
@@ -780,20 +779,24 @@ const restaurantList = [
   },
 ];
 
+// DESTRUCTURING PROPS OBJECT:
+// Is a way to avoid repeating the props object, making the code more readable and the code more flexible, as we can change the name of the props object, and the code will still work.
+// Now you can remove props and just have restauarant, and the code will still work.
+//<h2> {props.restaurant.data?.name} </h2> to destructured <h2> {restaurant.data?.name} </h2>
+//<h3> {props.restaurant.data?.cuisines?.join(", ")} </h3> to destructured <h3> {restaurant.data?.cuisines?.join(", ")} </h3>
 
-const RestaurantCard = (props) => {
-  console.log(props);
+const RestaurantCard = ({ restaurant }) => {
   return (
     <div className="card">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          props.restaurant.data?.cloudinaryImageId
+          restaurant.data?.cloudinaryImageId
         }
       />
-      <h2> {props.restaurant.data?.name} </h2>
-      <h3> {props.restaurant.data?.cuisines?.join(", ")} </h3>
-      <h4> {props.restaurant.data?.lastMileTravelString} minutes </h4>
+      <h2> {restaurant.data?.name} </h2>
+      <h3> {restaurant.data?.cuisines?.join(", ")} </h3>
+      <h4> {restaurant.data?.lastMileTravelString} minutes </h4>
     </div>
   );
 };
@@ -807,8 +810,6 @@ const RestaurantCard = (props) => {
 //  restaurant={restaurantList[0]}  - this whole thing is called PROPS,
 //whenever we pass in some props to a Functional Component it is ...
 // ... received as a parameter RestaurantCard = ( PROPS ) => {   which is known as PROPS.
-// Now you can use this RestaurantCard = (PROPS) => {  just like any other variable.
-//Remember props is an object like restaurant (in our swiggy data when you looked in Fetch under Network in Developer Tools).
 
 const Body = () => {
   return (
