@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// Deafult Import
 import Header from "./components/Header";
-// Named Import
-import { Title } from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
 // APP LAYOUT
 /**
@@ -776,22 +775,6 @@ const RestaurantCard = ({
       <h4>{lastMileTravelString} minutes</h4>
     </div>
   );
-};
-
-//1. map over the array
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
 };
 
 const AppLayout = () => {
