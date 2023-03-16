@@ -779,15 +779,14 @@ const restaurantList = [
   },
 ];
 
-// DESTRUCTURING PROPS OBJECT:
-// Is a way to avoid repeating the props object, making the code more readable and the code more flexible, as we can change the name of the props object, and the code will still work.
-// Now you can remove props and just have restauarant, and the code will still work.
-//<h2> {props.restaurant.data?.name} </h2> to destructured <h2> {restaurant.data?.name} </h2>
-//<h3> {props.restaurant.data?.cuisines?.join(", ")} </h3> to destructured <h3> {restaurant.data?.cuisines?.join(", ")} </h3>
+// you can destructure the props object to get the restaurant object
 
-const RestaurantCard = ({ restaurant }) => {
-  const { name, cuisines, cloudinaryImageId, lastMileTravelString, area } =
-    restaurant.data;
+const RestaurantCard = ({
+  name,
+  cuisines,
+  cloudinaryImageId,
+  lastMileTravelString,
+}) => {
   return (
     <div className="card">
       <img
@@ -796,33 +795,30 @@ const RestaurantCard = ({ restaurant }) => {
           cloudinaryImageId
         }
       />
-      <h2> {name} </h2>
-      <h3> {cuisines.join(", ")} </h3>
-      <h4> {lastMileTravelString} minutes </h4>
-      <h4> {area} </h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
     </div>
   );
 };
 
-// PROPS REVIEW SUMMARY AND EXAMPLE:
-// For example IN THE BELOW CODE:
-// <RestaurantCard restaurant={restaurantList[0]} />
+//props are passed as an object
+//use the spread operater to pass the props object to the component.
+//This will pass all the properties of the object as props to the component.
+//Instead of having to write restaurantList[0].data, restaurantList[1].data and [2], [3] etc.
+//Use .map to iterate over the array and pass the props object to the component
 
-// <RestaurantCard /> is like the function call.
-// {restaurantList[0]}  is where we pass in the arguments.
-//  restaurant={restaurantList[0]}  - this whole thing is called PROPS,
-//whenever we pass in some props to a Functional Component it is ...
-// ... received as a parameter RestaurantCard = ( PROPS ) => {   which is known as PROPS.
+//1. map over the array
+//2. Give a callabck function, this callback fn takes each object from restaurantList - restuarant.
+// For each object you wnat your fn to return some piece of jsx which is your RestaurantCard.
+//3. Now you want to sread your restauarant Object use ...
 
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard restaurant={restaurantList[0]} hello="world" />
-      <RestaurantCard restaurant={restaurantList[1]} />
-      <RestaurantCard restaurant={restaurantList[2]} />
-      <RestaurantCard restaurant={restaurantList[3]} />
-      <RestaurantCard restaurant={restaurantList[4]} />
-      <RestaurantCard restaurant={restaurantList[5]} />
+      {restaurantList.map((restaurant) => {
+        return <RestaurantCard {...restaurant.data} />;
+      })}
     </div>
   );
 };
