@@ -10,17 +10,24 @@ const Title = () => (
 
 const Header = () => {
   return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
+    <>
+      <div className="header">
+        <Title />
+        <div className="icons">
+          <i class="fas fa-bars" id="bars"></i>
+          <i class="fas fa-search" id="search-icon"></i>
+          <i class="fas fa-user" id="user-icon"></i>
+          <i class="fas fa-shopping-cart" id="cart-icon"></i>
+          {/* <a href="#" class="fas fa-shopping cart"></a> */}
+          <div className="nav-items">
+            <a href="#home">home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#cart">Cart</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
