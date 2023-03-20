@@ -4,6 +4,8 @@ import RestaurantCard from "./RestaurantCard";
 const Body = () => {
   let searchTxt = "KFKFCCCCC"; // This is the search text but hardcoded for now
 
+  const [searchText] = useState(); // Created varible with useState hook.
+
   return (
     <>
       <div className="search-container">
