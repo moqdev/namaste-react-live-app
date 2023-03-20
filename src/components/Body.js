@@ -3,9 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
 const Body = () => {
-  const searchTxt = "KFC"; // creating local varible via JS
-
-  const [searchText] = useState("KFC"); // creating local varible via React
+  const [searchInput, setSearchInput] = useState("");
   return (
     <>
       <div className="search-container">
@@ -13,13 +11,13 @@ const Body = () => {
           type="text"
           className="search-input"
           placeholder="Search for restaurants"
-          value={searchText}
+          value={searchInput}
           onChange={(e) => {
-            searchTxt = e.target.value;
-            console.log(searchTxt);
+            setSearchInput(e.target.value);
+            // console.log(searchInput);
           }}
         />
-        <button className="search-btn">Search</button>
+        <button className="search-btn">Search - {searchInput} </button>
         <div className="restaurant-list">
           {restaurantList.map((restaurant) => {
             return (
