@@ -4,9 +4,14 @@ import RestaurantCard from "./RestaurantCard";
 const Body = () => {
   return (
     <>
-      <div className="search-form">
-        <div className="search-box">
-        <input type="text" className="search-input" placeholder="Search for restaurants" />
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search for restaurants"
+          value=""
+        />
+        <button className="search-btn">Search</button>
         <div className="restaurant-list">
           {restaurantList.map((restaurant) => {
             return (
@@ -14,8 +19,7 @@ const Body = () => {
             );
           })}
         </div>
-        </div>
-      </div>..
+      </div>
     </>
   );
 };
