@@ -2,6 +2,8 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
+  let searchTxt = "KFKFCCCCC"; // This is the search text but hardcoded for now
+
   return (
     <>
       <div className="search-container">
@@ -9,7 +11,11 @@ const Body = () => {
           type="text"
           className="search-input"
           placeholder="Search for restaurants"
-          value=""
+          value={searchTxt}
+          onChange={(e) => {
+            searchTxt = e.target.value;
+            console.log(searchTxt);
+          }}
         />
         <button className="search-btn">Search</button>
         <div className="restaurant-list">
