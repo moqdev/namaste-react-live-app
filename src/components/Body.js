@@ -3,11 +3,10 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
 const Body = () => {
-  //destructure the state varible (first element searchText)
-  //the first element is the varible name and the second element is the function to update the variable
-  const searchvar = useState(); // returns = [ varible, function to update the variable called state varible ] an array ,
+  //React - const [searchText, setSearchText] = useState();
+  //is equivalent to JS - const srchtext = "hello"
+  const [searchText, setSearchText] = useState("hello");
 
-  const [searchText, setSearchText] = searchvar;
   return (
     <>
       <div className="search-container">
@@ -16,7 +15,11 @@ const Body = () => {
           className="search-input"
           placeholder="Search for restaurants"
           value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
         />
+        <h1>{searchText}</h1>
         <button className="search-btn"> </button>
       </div>
       <div className="restaurant-list">
