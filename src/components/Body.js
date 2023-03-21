@@ -3,9 +3,9 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
 const Body = () => {
-  //React - const [searchText, setSearchText] = useState();
-  //is equivalent to JS - const srchtext = "hello"
   const [searchText, setSearchText] = useState("hello");
+
+  const [searchClicked, setSearchClicked] = useState("false");
 
   return (
     <>
@@ -19,8 +19,14 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <h1>{searchText}</h1>
-        <button className="search-btn"> </button>
+        <h1>{searchClicked}</h1>
+        <button
+          className="search-btn"
+          onClick={() => {
+            setSearchClicked("true");
+          }}>
+          Search
+        </button>
       </div>
       <div className="restaurant-list">
         {restaurantList.map((restaurant) => {
