@@ -20,8 +20,9 @@ const Header = () => {
           <i class="fas fa-shopping-cart" id="cart-icon"></i>
           {/* <a href="#" class="fas fa-shopping cart"></a> */}
           <div className="nav-items">
-            <a href="#home">home</a>
+            <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#contact">Cart</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
