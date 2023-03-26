@@ -14,10 +14,10 @@ const Header = () => {
       <div className="header">
         <Title />
         <div className="icons">
-          <i class="fas fa-bars" id="menu-bars"></i>
-          <i class="fas fa-search" id="search-icon"></i>
-          <i class="fas fa-user" id="user-icon"></i>
-          <i class="fas fa-shopping-cart" id="cart-icon"></i>
+          <i className="fas fa-bars" id="menu-bars"></i>
+          <i className="fas fa-search" id="search-icon"></i>
+          <i className="fas fa-user" id="user-icon"></i>
+          <i className="fas fa-shopping-cart" id="cart-icon"></i>
           {/* <a href="#" class="fas fa-shopping cart"></a> */}
           <div className="nav-items">
             <a href="#home">Home</a>

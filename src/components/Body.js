@@ -21,16 +21,21 @@ const Body = () => {
 
   // make async function
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-    // Optional Chaining is Best Practice, it wont throw errors if the data is not present
-    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // add try/catch to handle errors in our code and in the API
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      console.log(json);
+      // Optional Chaining - Best Practice
+      setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    } catch (error) {
+      setRestaurants([]);
+      console.log("render");
+      console.log("Error fetching restaurant data: ${error.message}");
+    }
   }
-
-  console.log("render");
 
   return (
     <>
