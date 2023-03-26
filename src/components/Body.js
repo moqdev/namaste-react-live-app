@@ -26,7 +26,8 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setRestaurants(json.data.cards[2].data.data.cards); // BAD Practice
+    // Optional Chaining is Best Practice, it wont throw errors if the data is not present
+    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   console.log("render");
