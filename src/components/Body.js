@@ -15,8 +15,10 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    console.log("call this when dependency changes");
+    console.log("useEffect called");
   }, [searchText]);
+
+  console.log("rendered");
 
   return (
     <>
